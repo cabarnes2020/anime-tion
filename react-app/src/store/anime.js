@@ -2,7 +2,7 @@ const GET_ANIME = 'anime/getAnime'
 const GET_TRENDING_ANIME = 'anime/getTrendingAnime'
 const GET_ONE_ANIME = 'anime/getOneAnime'
 
-const initialState = {animeList: {}}
+const initialState = {}
 
 const getAnime = (payload) => {
     return {
