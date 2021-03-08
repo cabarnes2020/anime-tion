@@ -9,7 +9,7 @@ anime_routes = Blueprint('anime', __name__)
 @anime_routes.route('/')
 def anime():
     animes = Anime.query.all()
-    return {"anime": [anime.to_dict() for anime in animes]}
+    return {"animeList": [anime.to_dict() for anime in animes]}
 
 
 @anime_routes.route('/<int:id>')
