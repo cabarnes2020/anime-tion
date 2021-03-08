@@ -7,7 +7,6 @@ def retrieve_data(url):
         "Accept": "application/vnd.api+json",
         "Content-Type": "application/vnd.api+json"
     }
-
     list_of_anime = requests.get(url, headers=headers)
     return list_of_anime.json()
 
@@ -27,8 +26,9 @@ def seed_animes():
             title=i["attributes"]["canonicalTitle"],
             image=i["attributes"]["posterImage"]["small"],
             release_date=i["attributes"]["startDate"],
-            trailer_url="http://www.youtube.com/watch?v=" + i["attributes"]["youtubeVideoId"],
-            description=i["attributes"]["synopsis"]
+            trailer_url="http://www.youtube.com/watch?v=" +
+            i["attributes"]["youtubeVideoId"],
+            description=i["attributes"]["synopsis"],
         )
         db.session.add(anime_series)
     db.session.commit()
