@@ -1,19 +1,25 @@
 import React, { useState } from "react";
+import {useDispatch} from "react-redux"
 import { Redirect } from 'react-router-dom';
-import { signUp } from '../../services/auth';
+import { signUp } from '../../store/session';
+import { setUser } from "../../store/session"
 
 const SignUpForm = ({authenticated, setAuthenticated}) => {
+  const dispatch = useDispatch()
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [profilePic, setProfilePic] = useState("")
+  const [favAnimeId, setFavAnimeId] = useState(1)
 
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const user = await signUp(username, email, password);
+      const user = dispatch(signUp(username, email, password, profilePic, favAnimeId));
       if (!user.errors) {
         setAuthenticated(true);
+        dispatch(setUser(user))
       }
     }
   };
@@ -32,6 +38,14 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
 
   const updateRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
+  };
+
+  const updateProfilePic = (e) => {
+    setProfilePic(e.target.value);
+  };
+
+  const updateFavAnimeId = (e) => {
+    setFavAnimeId(e.target.value);
   };
 
   if (authenticated) {
@@ -75,6 +89,24 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
+        ></input>
+      </div>
+      <div>
+        <label>Profile Picture</label>
+        <input
+          type="file"
+          name="profilePic"
+          onChange={updateProfilePic}
+          value={profilePic}
+        ></input>
+      </div>
+      <div>
+        <label>Favorite Anime ID</label>
+        <input
+          type="text"
+          name="favorite-anime"
+          onChange={updateFavAnimeId}
+          value={favAnimeId}
         ></input>
       </div>
       <button type="submit">Sign Up</button>

@@ -38,11 +38,14 @@ def login():
     # Get the csrf_token from the request cookie and put it into the
     # form manually to validate_on_submit can be used
     form['csrf_token'].data = request.cookies['csrf_token']
+    print("BEFORE IF STATEMENT")
     if form.validate_on_submit():
         # Add the user to the session, we are logged in!
+        print("INSIDE IF STATEMENT")
         user = User.query.filter(User.email == form.data['email']).first()
         login_user(user)
         return user.to_dict()
+    print("AFTER IF STATEMENT")
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
@@ -62,15 +65,27 @@ def sign_up():
     """
     form = SignUpForm()
     form['csrf_token'].data = request.cookies['csrf_token']
+    if "file" not in request.files:
+        return "No user_file key in request.files"
+
+    file = request.files["profile_pic"]
+    if file:
+        file_url = upload_file_to_s3(file, Config.S3_BUCKET)
+    else:
+        file_url = ''
+
     if form.validate_on_submit():
         user = User(
             username=form.data['username'],
             email=form.data['email'],
-            password=form.data['password']
+            password=form.data['password'],
+            profile_pic=file_url,
+            fav_anime_id=form.data['fav_anime_id']
         )
         db.session.add(user)
         db.session.commit()
         login_user(user)
+        print(user.to_dict())
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}
 
