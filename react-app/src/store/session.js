@@ -84,8 +84,7 @@ export const signUp = (username, email, password, profile_pic, fav_anime_id) => 
     // console.log(response)
 
     const user = await response.json()
-
-
+    console.log("USERRR", user)
     if (!user.errors) {
         dispatch(setUser(user))
     }

@@ -16,7 +16,8 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const user = dispatch(signUp(username, email, password, profilePic, favAnimeId));
+      const user = await dispatch(signUp(username, email, password, profilePic, favAnimeId));
+      console.log("USERRR", user)
       if (!user.errors) {
         setAuthenticated(true);
         dispatch(setUser(user))
@@ -41,7 +42,8 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   };
 
   const updateProfilePic = (e) => {
-    setProfilePic(e.target.value);
+    const file = e.target.files[0]
+    setProfilePic(file);
   };
 
   const updateFavAnimeId = (e) => {
@@ -97,7 +99,6 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
           type="file"
           name="profilePic"
           onChange={updateProfilePic}
-          value={profilePic}
         ></input>
       </div>
       <div>
