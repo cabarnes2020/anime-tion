@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import {getAll} from '../../store/anime'
 import "./LandingPage.css"
-
+import SearchBar from "../SearchBar/Searchbar"
 
 const LandingPage = () => {
     const sessionUser = useSelector(state => state.session.user)
@@ -24,6 +24,10 @@ const LandingPage = () => {
                 <div className='landing-container'> 
                     <div className='anime-titles'>
                         <h1>Anime titles</h1>
+                    </div>
+
+                    <div className='searchbar'>
+                        <SearchBar />
                     </div>
                 </div>
             }
