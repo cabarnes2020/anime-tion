@@ -1,0 +1,34 @@
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: orange;
+    border-radius: 10px;
+    width: 50%;
+    height: 55px;
+    background-color: orange;
+}
+
+.input-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 400px;
+    height: 25px;
+}
+
+.input{
+    border-radius: 10px;
+    width: 400px;
+    height: 25px;
+    background-color: whitesmoke
+}
+
+.fas{
+    z-index: 1;
+    color: gray;
+    font-size: 25px;
+    margin-left: 1rem;
+}
