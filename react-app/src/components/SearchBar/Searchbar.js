@@ -31,6 +31,7 @@ const SearchBar = () => {
                     <input
                         type="text"
                         className="input"
+                        placeholder="Search anime..."
                         onChange={(e) => {setKeyword(e.target.value)}}
                     />
                 </div>

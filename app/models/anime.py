@@ -19,6 +19,7 @@ class Anime(db.Model):
             "id": self.id,
             "title": self.title,
             "release_date": self.release_date,
+            "image": self.image,
             "trailer": self.trailer_url,
             "description": self.description
         }

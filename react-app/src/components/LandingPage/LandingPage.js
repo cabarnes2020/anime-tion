@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import {getAll} from '../../store/anime'
 import "./LandingPage.css"
 import SearchBar from "../SearchBar/Searchbar"
+import AnimeCard from "../AnimeCard/AnimeCard"
+
 
 const LandingPage = () => {
     const sessionUser = useSelector(state => state.session.user)
@@ -28,6 +30,14 @@ const LandingPage = () => {
 
                     <div className='searchbar'>
                         <SearchBar />
+                    </div>
+
+                    <div className='anime-container'>
+                        {
+                            animeList.map((anime) => {
+                                return <AnimeCard anime={anime}/>
+                            })
+                        }
                     </div>
                 </div>
             }
