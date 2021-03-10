@@ -20,9 +20,9 @@
 }
 
 .input{
-    border-radius: 10px;
+    border-radius: 9999px;
     width: 400px;
-    height: 25px;
+    height: 45px;
     background-color: whitesmoke
 }
 
