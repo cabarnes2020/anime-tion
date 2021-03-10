@@ -1,0 +1,45 @@
+.card-container{
+    display: flex;
+    flex-direction: column;
+    border: solid gray;
+    border-radius: 10px;
+    width: 20%;
+    height: 300px;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    background-color: gray
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+    overflow: hidden;
+}
+
+.img-container image{
+    overflow: hidden;
+    object-fit: contain;
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.info-container h2{
+    display: flex;
+    justify-content: center;
+    color: orange;
+    text-align: center;
+    margin: 1rem;
+}
+
+.hover {
+    transition: all .2s ease-in-out;
+}
+
+.hover:hover {
+    transform: scale(1.05);
+}
