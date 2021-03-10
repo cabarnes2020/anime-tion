@@ -3,9 +3,11 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {getAll, getTrending} from "../../store/anime"
 import './SearchBar.css'
+import {useSearchContext} from "../../context/SearchContext"
 
 const SearchBar = () => {
     const dispatch = useDispatch()
+    const {setFilterAnime} = useSearchContext()
     const animeList = useSelector(state => state.anime.animeList)
     const [keyword, setKeyword] = useState('')
     const [filtered, setFiltered] = useState([]);
@@ -15,11 +17,14 @@ const SearchBar = () => {
     }, [dispatch])
 
     useEffect(() => {
-        setFiltered(
-            animeList.filter((anime) => {
-                return anime.title.toLowerCase().includes(keyword.toLowerCase())
-            })
-        )
+        if(animeList){
+            setFilterAnime(
+                animeList.filter((anime) => {
+                    return anime.title.toLowerCase().includes(keyword.toLowerCase())
+                })
+            )
+        }
+        
         console.log(filtered)
     }, [keyword, animeList])
 
