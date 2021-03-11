@@ -7,7 +7,9 @@
     height: 300px;
     margin-right: 2rem;
     margin-bottom: 2rem;
-    background-color: gray
+    background-color: gray;
+    box-shadow: 5px 5px 10px #F6F740;
+    /* 0.8rem 0.8rem 2rem gray; */
 }
 
 .img-container{
@@ -31,7 +33,7 @@
 .info-container h2{
     display: flex;
     justify-content: center;
-    color: orange;
+    color: #FB8B24;
     text-align: center;
     margin: 1rem;
 }

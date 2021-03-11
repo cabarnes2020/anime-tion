@@ -3,6 +3,7 @@
     justify-content: center;
     flex-direction: column;
     height: fit-content;
+    background-color: #424B54;
 }
 
 .searchbar{

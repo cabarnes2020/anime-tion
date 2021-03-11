@@ -9,9 +9,9 @@ const AnimeCard = ({anime}) => {
     const dispatch = useDispatch()
     const animeList = useSelector(state => state.anime.animeList)
 
-    useEffect(() => {
-        dispatch(getAll())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getAll())
+    // }, [dispatch])
 
     return(
         <div className='card-container hover'>
@@ -19,7 +19,9 @@ const AnimeCard = ({anime}) => {
                 <img src={anime.image} />
             </div>
             <div className='info-container'>
-                <h2>{anime.title}</h2>
+                <Link className='anime-card__title' to={`/anime/${anime.id}`}>
+                    {anime.title}
+                </Link>
                 <h2>{anime.release_date}</h2>
             </div>
         </div>

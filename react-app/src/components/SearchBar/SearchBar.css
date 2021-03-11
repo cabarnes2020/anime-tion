@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: 400px;
@@ -18,9 +19,21 @@
 
 .input{
     border-radius: 9999px;
+    border: solid;
+    border-width: 3px;
+    border-color: gray;
     width: 400px;
     height: 45px;
-    background-color: whitesmoke
+    background-color: rgba(66, 75, 84, 1);
+    outline: none;
+    color: #F6F740;
+    text-align: center;
+}
+
+.input:focus{
+    transition: all .2s ease-in-out;
+    transform: scale(1.05);
+    border-color: rgb(246, 247, 64);
 }
 
 .fas{
