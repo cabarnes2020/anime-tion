@@ -1,0 +1,17 @@
+.page-container {
+    display: flex;
+    justify-content: start;
+    height: 100vh;
+}
+.profile-info-container{
+    display: flex;
+    align-items: flex-start;
+    align-self: flex-start;
+    width:50%;
+    height: 300px;
+}
+
+.user-title{
+    display: flex;
+    justify-content: start;
+}
