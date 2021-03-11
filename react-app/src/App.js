@@ -9,6 +9,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import LandingPage from "./components/LandingPage/LandingPage.js";
 import AnimePage from "./components/AnimePage/AnimePage"
+import UserProfile from "./components/UserProfile/UserProfile"
 import { authenticate } from "./store/session";
 
 
@@ -48,7 +49,7 @@ function App() {
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
-          <User />
+          <UserProfile />
         </ProtectedRoute>
         <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
           <LandingPage />
