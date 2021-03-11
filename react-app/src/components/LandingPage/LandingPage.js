@@ -12,7 +12,9 @@ const LandingPage = () => {
     const animeList = useSelector(state => state.anime.animeList)
     const { filterAnime } = useSearchContext()
     const dispatch = useDispatch()
-
+    
+    console.log("SESSION", sessionUser)
+    
     useEffect(() => {
         dispatch(getAll())
     }, [dispatch])

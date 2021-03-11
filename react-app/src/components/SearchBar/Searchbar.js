@@ -12,9 +12,9 @@ const SearchBar = () => {
     const [keyword, setKeyword] = useState('')
     const [filtered, setFiltered] = useState([]);
 
-    useEffect(() => {
-        dispatch(getAll())
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getAll())
+    // }, [dispatch])
 
     useEffect(() => {
         if(animeList){
