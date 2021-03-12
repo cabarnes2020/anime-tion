@@ -31,7 +31,7 @@ const LandingPage = () => {
                     <div className='anime-container'>
                         {
                             filterAnime.map((anime) => {
-                                return <AnimeCard anime={anime}/>
+                                return <AnimeCard key={anime.name} anime={anime}/>
                             })
                         }
                     </div>

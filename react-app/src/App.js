@@ -34,14 +34,14 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar setAuthenticated={setAuthenticated} />
+      <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} />
       <Switch>
-        <Route path="/login" exact={true}>
+        {/* <Route path="/login" exact={true}>
           <LoginForm
             authenticated={authenticated}
             setAuthenticated={setAuthenticated}
           />
-        </Route>
+        </Route> */}
         <Route path="/sign-up" exact={true}>
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
         </Route>

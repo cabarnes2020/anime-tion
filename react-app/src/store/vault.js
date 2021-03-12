@@ -1,5 +1,3 @@
-import animeReducer from "./anime"
-
 const GET_VAULTS = 'vaults/getVaults'
 const GET_A_VAULT = 'vaults/getOneVault'
 
@@ -12,15 +10,15 @@ const getVaults = (payload) => {
     }
 }
 
-const getOneVault = (vault) => {
-    return {
-        type: GET_ONE_VAULT,
-        payload: vault
-    }
-}
+// const getOneVault = (vault) => {
+//     return {
+//         type: GET_ONE_VAULT,
+//         payload: vault
+//     }
+// }
 
 
-export const getAll = () => (dispatch) => {
+export const getAll = () => async (dispatch) => {
     const res = await fetch('/api/vaults')
 
     if(res.ok){
