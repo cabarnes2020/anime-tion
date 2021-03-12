@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
+    vaults = db.relationship('Vault', back_populates='user')
 
     @property
     def password(self):

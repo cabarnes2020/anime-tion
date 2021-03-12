@@ -2,11 +2,12 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import sessionReducer from './session'
 import animeReducer from './anime'
-
+import vaultReducer from './vault'
 
 const rootReducer = combineReducers({
     session: sessionReducer,
-    anime: animeReducer
+    anime: animeReducer,
+    vault: vaultReducer
 })
 
 
