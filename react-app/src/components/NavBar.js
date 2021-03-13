@@ -2,37 +2,40 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import LoginFormModal from './auth/LoginFormModal'
-
+import SignupFormModal from './auth/SignupFormModal'
+import VaultFormModal from './VaultModal/VaultModal'
+import './NavBar.css'
 
 const NavBar = ({ authenticated, setAuthenticated }) => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/search" exact={true} activeClassName="active">
+    <>
+      <div className='navbar-container'>
+        <div className='navbar-left'>
+          <NavLink className='navbar-link' to="/search" exact={true} activeClassName="active">
             Home
           </NavLink>
-        </li>
-        <li>
-          <LoginFormModal authenticated={authenticated} setAuthenticated={setAuthenticated}>
-
-          </LoginFormModal>
-        </li>
-        <li>
-          <NavLink to="/sign-up" exact={true} activeClassName="active">
-            Sign Up
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/users" exact={true} activeClassName="active">
-            Users
-          </NavLink>
-        </li>
-        <li>
-          <LogoutButton setAuthenticated={setAuthenticated} />
-        </li>
-      </ul>
-    </nav>
+        </div>
+        <div className='navbar-middle'>
+          { authenticated &&
+            <h2>ANIMEtion</h2>
+          }
+        </div>
+        <div className='navbar-right'>
+          {!authenticated &&
+            <>
+              <LoginFormModal setAuthenticated={setAuthenticated} authenticate={authenticated} />
+              <SignupFormModal setAuthenticated={setAuthenticated} authenticate={authenticated} /> 
+            </>
+          }
+          { authenticated &&
+          <>
+            <LogoutButton setAuthenticated={setAuthenticated}/>
+            <VaultFormModal />
+          </>
+          }
+        </div>
+      </div>
+    </>
   );
 }
 

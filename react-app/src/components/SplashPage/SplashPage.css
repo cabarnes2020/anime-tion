@@ -33,7 +33,7 @@
 }
 
 .slide-show li:nth-child(1) span {
-    background-image: url('https://anime-tion.s3.us-east-2.amazonaws.com/roger_vs_wb.jpeg');
+    background-image: url('https://anime-tion.s3.us-east-2.amazonaws.com/wb_roger.jpeg');
 }
 
 .slide-show li:nth-child(2) span{
@@ -42,7 +42,7 @@
 }
 
 .slide-show li:nth-child(3) span{
-    background-image: url('https://anime-tion.s3.us-east-2.amazonaws.com/blackClover.png');
+    background-image: url('https://anime-tion.s3.us-east-2.amazonaws.com/asta.jpeg');
     animation-delay: 14s;
 }
 
@@ -52,12 +52,12 @@
 }
 
 .slide-show li:nth-child(5) span{
-    background-image: url('https://anime-tion.s3.us-east-2.amazonaws.com/hxh_netero.jpeg');
+    background-image: url('https://anime-tion.s3.us-east-2.amazonaws.com/netero_zeno.jpeg');
     animation-delay: 28s;
 }
 
 .slide-show li:nth-child(6) span{
-    background-image: url('https://anime-tion.s3.us-east-2.amazonaws.com/naruto_vs_sasuke.jpeg');
+    background-image: url('https://anime-tion.s3.us-east-2.amazonaws.com/sasuke_itachi.jpeg');
     animation-delay: 35s;
 }
 

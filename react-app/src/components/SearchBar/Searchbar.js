@@ -12,10 +12,6 @@ const SearchBar = () => {
     const [keyword, setKeyword] = useState('')
     const [filtered, setFiltered] = useState([]);
 
-    // useEffect(() => {
-    //     dispatch(getAll())
-    // }, [dispatch])
-
     useEffect(() => {
         if(animeList){
             setFilterAnime(
@@ -24,8 +20,6 @@ const SearchBar = () => {
                 })
             )
         }
-        
-        console.log(filtered)
     }, [keyword, animeList])
 
 

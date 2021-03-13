@@ -10,14 +10,6 @@ const getVaults = (payload) => {
     }
 }
 
-// const getOneVault = (vault) => {
-//     return {
-//         type: GET_ONE_VAULT,
-//         payload: vault
-//     }
-// }
-
-
 export const getAll = () => async (dispatch) => {
     const res = await fetch('/api/vaults')
 

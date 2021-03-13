@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 import {getAll} from '../../store/anime'
 import "./LandingPage.css"
 import SearchBar from "../SearchBar/Searchbar"
@@ -19,7 +19,11 @@ const LandingPage = () => {
         dispatch(getAll())
     }, [dispatch])
 
-
+    if(!sessionUser){
+        return (
+            <Redirect to='/' />
+        )
+    }
     return (
         <> 
             {filterAnime &&

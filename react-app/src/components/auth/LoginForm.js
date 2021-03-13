@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../store/session";
 import {useDispatch} from "react-redux"
 
+
 const LoginForm = ({ authenticated, setAuthenticated, setShowModal }) => {
   const dispatch = useDispatch()
+  const history = useHistory()
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,6 +17,7 @@ const LoginForm = ({ authenticated, setAuthenticated, setShowModal }) => {
     if (!user.errors) {
       setAuthenticated(true);
       setShowModal(false);
+      history.push('/search')
     } else {
       setErrors(user.errors);
     }
@@ -28,9 +31,6 @@ const LoginForm = ({ authenticated, setAuthenticated, setShowModal }) => {
     setPassword(e.target.value);
   };
 
-  if(authenticated){
-    return <Redirect to='/' />
-  }
   return (
     <form onSubmit={onLogin}>
       <div>

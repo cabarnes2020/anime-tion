@@ -1,6 +1,6 @@
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser'
-
+const MAKE_VAULT = 'session/makeVault'
 
 export const setUser = (user) => {
     return {
@@ -81,8 +81,6 @@ export const signUp = (username, email, password, profile_pic, fav_anime_id) => 
         body: formData,
     })
 
-    // console.log(response)
-
     const user = await response.json()
     console.log("USERRR", user)
     if (!user.errors) {
@@ -90,6 +88,23 @@ export const signUp = (username, email, password, profile_pic, fav_anime_id) => 
     }
     return user
 }
+
+export const createVault = (name) => async (dispatch) => {
+
+    const form = new FormData()
+    form.append("name", name)
+
+    const res = await fetch('/api/vaults/new', {
+        method: 'POST',
+        body: form
+    })
+
+    if(res.ok){
+        const user = await res.json()
+        dispatch(setUser(user))
+    }
+}
+
 
 
 const initialState = { user: null };
@@ -111,4 +126,4 @@ const sessionReducer = (state = initialState, action) => {
     }
 }
 
-export default sessionReducer
+export default sessionReducer;

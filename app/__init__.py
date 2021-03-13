@@ -9,9 +9,8 @@ from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.anime_routes import anime_routes
-
+from .api.vault_routes import vault_routes
 from .seeds import seed_commands
-
 from .config import Config
 
 app = Flask(__name__)
@@ -33,6 +32,7 @@ app.config.from_object(Config)
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(anime_routes, url_prefix='/api/anime')
+app.register_blueprint(vault_routes, url_prefix='/api/vaults')
 db.init_app(app)
 Migrate(app, db)
 

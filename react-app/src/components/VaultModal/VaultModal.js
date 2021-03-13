@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Modal } from '../../context/ModalContext';
 import VaultForm from '../VaultForm/VaultForm';
 
-function VaultFormModal({authenticated, setAuthenticated}) {
+function VaultFormModal() {
     const [showModal, setShowModal] = useState(false)
 
     return(
         <>
-            <button onClick={() => setShowModal(true)}>Create Vault</button>
+            <button className='vault-button' onClick={() => setShowModal(true)}>Create Vault</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <VaultForm></VaultForm>

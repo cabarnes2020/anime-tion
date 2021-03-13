@@ -1,6 +1,7 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import Vault, User
+from app.models import db, Vault, User
+from app.forms import VaultForm
 import requests
 
 vault_routes = Blueprint('vaults', __name__)
@@ -14,7 +15,7 @@ def new_vault():
 
     if form.validate_on_submit():
         vault = Vault(
-            name=form.data['name']
+            name=form.data['name'],
             user_id=current_user.id
         )
         db.session.add(vault)

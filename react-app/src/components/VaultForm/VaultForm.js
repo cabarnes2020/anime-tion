@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useDispatch } from "react-redux"
+import {createVault} from '../../store/session'
 import './VaultForm.css'
+
 
 const VaultForm = ({authenticated, setAuthenticated, setShowModal}) => {
     const dispatch = useDispatch()
@@ -10,13 +12,7 @@ const VaultForm = ({authenticated, setAuthenticated, setShowModal}) => {
 
     const onCreateVault = async(e) => {
         e.preventDefault()
-        const form = new FormData()
-        form.append("name", name)
-
-        // const res = await fetch('/api/vaults/new', {
-        //     method:'POST',
-        //     body: JSON.stringify() //add something to here!!
-        // })
+        dispatch(createVault(name))
     }
 
     const updateName = (e) => {
@@ -24,7 +20,7 @@ const VaultForm = ({authenticated, setAuthenticated, setShowModal}) => {
     }
 
     return (
-        <form onSubmit={}>
+        <form onSubmit={onCreateVault}>
             <div>
                 {errors.map((error) => (
                     <div>{error}</div>
@@ -41,6 +37,7 @@ const VaultForm = ({authenticated, setAuthenticated, setShowModal}) => {
                         onChange={updateName}
                     />
                 </div>
+                <button type="submit">Create Vault</button>
             </div>
         </form>
     )

@@ -7,10 +7,18 @@ import "./UserProfile.css"
 const UserProfile = () => {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
+    const [isLoaded, setIsLoaded] = useState(false)
 
+    useEffect(() =>{
+        if(sessionUser){
+            setIsLoaded(true)
+        }
+    }, [isLoaded])
 
+    if(!isLoaded){
+        return null
+    }
     return(
-        sessionUser && 
         <div className='page-container'>
             <div className='profile-info-container'>
                 <div className='profile-pic'>
@@ -19,6 +27,15 @@ const UserProfile = () => {
                 <h2>{sessionUser.username}</h2>
             </div>
             <div className='vault-container'>
+                {
+                    sessionUser.vaults.map((vault) => {
+                        return(
+                            <>
+                                {vault.name}
+                            </>
+                        )
+                    })
+                }
                 <h1>Vaults will go here!</h1>
             </div>
         </div>

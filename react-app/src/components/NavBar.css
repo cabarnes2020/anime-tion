@@ -1,0 +1,37 @@
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 50px
+}
+
+.navbar-left{
+    display: flex;
+    width: 80px;
+    padding-top: 1rem;
+    margin-left: 1rem;
+}
+
+.navbar-link{
+    text-decoration: none;
+    font-size: large;
+    color: rgb(246, 247, 64);
+}
+
+.navbar-middle{
+    display: flex;
+    justify-content: center;
+}
+.navbar-middle h2{
+    font-size: large;
+    text-shadow: 2px 2px  rgba(66, 75, 84, 1);
+    color: rgb(246, 247, 64);
+}
+
+.navbar-right{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    width: 200px;
+}
