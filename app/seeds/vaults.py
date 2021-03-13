@@ -12,5 +12,5 @@ def seed_vaults():
 
 
 def undo_vaults():
-    db.session.execute('TRUNCATE vaults CASCADE;')
+    db.session.execute('TRUNCATE vaults restart identity CASCADE;')
     db.session.commit()
