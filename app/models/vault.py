@@ -13,10 +13,13 @@ class Vault(db.Model):
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
     user = db.relationship('User', back_populates='vaults')
+    
+    anime_list = db.relationship('Anime', back_populates='vault')
 
     def to_dict(self):
         return {
             "id": self.id,
             "name": self.name,
-            "user_id": self.user_id
+            "user_id": self.user_id,
+            "anime": [anime.to_dict() for anime in self.anime_list]
         }

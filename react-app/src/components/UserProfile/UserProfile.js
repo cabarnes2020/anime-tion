@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom';
+import VaultCard from '../VaultCard/VaultCard'
 import "./UserProfile.css"
 
 
@@ -26,17 +27,17 @@ const UserProfile = () => {
                 </div>
                 <h2>{sessionUser.username}</h2>
             </div>
-            <div className='vault-container'>
+            <div className='vault-div'>
+                <div className='vault-header'>
+                    <h1>My Vaults</h1>
+                </div>
                 {
                     sessionUser.vaults.map((vault) => {
                         return(
-                            <>
-                                {vault.name}
-                            </>
+                            <VaultCard key={vault.name} vault={vault} />
                         )
                     })
                 }
-                <h1>Vaults will go here!</h1>
             </div>
         </div>
     )
