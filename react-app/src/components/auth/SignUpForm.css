@@ -1,17 +1,16 @@
-.container{
+.signup-div{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 200px;
+    width: 600px;
+    height: fit-content;
     background-color: #424B54;
     border: solid, gray;
     border-radius: 10px;
     outline: none;
 }
 
-.container input{
+.signup-div input{
     border: solid gray;
     border-radius: 10px;
     background-color: #424B54;
@@ -23,11 +22,11 @@
     outline: none;
 }
 
-.container input:hover {
+.signup-div input:hover {
     border-color: #F6F740;
 }
 
-.login{
+.signup{
     background-color: rgba(66, 75, 84, 1);
     color: #F6F740;
     border: solid;
@@ -36,8 +35,9 @@
     width: 80px;
     height: 40px;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.login:hover{
+.signup:hover{
     border-color: #F6F740;
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../store/session";
 import {useDispatch} from "react-redux"
+import './LoginForm.css'
 
 
 const LoginForm = ({ authenticated, setAuthenticated, setShowModal }) => {
@@ -58,7 +59,9 @@ const LoginForm = ({ authenticated, setAuthenticated, setShowModal }) => {
             value={password}
             onChange={updatePassword}
           />
-          <button type="submit">Login</button>
+        </div>
+        <div>
+          <button className='login' type="submit">Login</button>
         </div>
       </div>
       

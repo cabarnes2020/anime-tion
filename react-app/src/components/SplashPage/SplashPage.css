@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     color:  rgb(246, 247, 64);
+    text-shadow: #424B54 10px 5px;
     font-size: 40px;
     height: 600px;
     align-items: center;
