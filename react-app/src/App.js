@@ -9,6 +9,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import LandingPage from "./components/LandingPage/LandingPage.js";
 import AnimePage from "./components/AnimePage/AnimePage"
+import SplashPage from "./components/SplashPage/SplashPage"
 import UserProfile from "./components/UserProfile/UserProfile"
 import { authenticate } from "./store/session";
 
@@ -34,13 +35,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar setAuthenticated={setAuthenticated} />
+      <NavBar authenticated={authenticated} setAuthenticated={setAuthenticated} />
       <Switch>
-        <Route path="/login" exact={true}>
-          <LoginForm
-            authenticated={authenticated}
-            setAuthenticated={setAuthenticated}
-          />
+        <Route path="/" exact={true}>
+          <SplashPage/>
         </Route>
         <Route path="/sign-up" exact={true}>
           <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
@@ -48,10 +46,10 @@ function App() {
         <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
           <UsersList/>
         </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
+        <ProtectedRoute path="/users/:userId" authenticated={authenticated}>
           <UserProfile />
         </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} authenticated={authenticated}>
+        <ProtectedRoute path="/search" exact={true} authenticated={authenticated}>
           <LandingPage />
         </ProtectedRoute>
         <ProtectedRoute path="/anime/:animeId" exact={true} authenticated={authenticated}>

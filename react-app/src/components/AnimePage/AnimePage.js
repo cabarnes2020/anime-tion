@@ -36,7 +36,6 @@ const AnimePage = () => {
                         <p>{anime.description}</p>
                     </div>
                 </div> 
-                
             </div> 
         }
         </>

@@ -22,6 +22,7 @@ def seed_animes():
         count += 1
 
     for i in anime:
+        print(i["id"])
         anime_series = Anime(
             title=i["attributes"]["canonicalTitle"],
             image=i["attributes"]["posterImage"]["small"],
@@ -35,5 +36,5 @@ def seed_animes():
 
 
 def undo_animes():
-    db.session.execute('TRUNCATE animes CASCADE;')
+    db.session.execute('TRUNCATE animes restart identity CASCADE;')
     db.session.commit()

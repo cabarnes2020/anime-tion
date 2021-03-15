@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
+    vaults = db.relationship('Vault', back_populates='user')
 
     @property
     def password(self):
@@ -37,5 +38,6 @@ class User(db.Model, UserMixin):
           "username": self.username,
           "email": self.email,
           "fav_anime_id": self.fav_anime_id,
-          "profile_pic": self.profile_pic
+          "profile_pic": self.profile_pic,
+          "vaults": [vault.to_dict() for vault in self.vaults]
         }

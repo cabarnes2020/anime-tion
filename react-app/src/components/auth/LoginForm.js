@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { login } from "../../store/session";
 import {useDispatch} from "react-redux"
+import './LoginForm.css'
 
-const LoginForm = ({ authenticated, setAuthenticated }) => {
+
+const LoginForm = ({ authenticated, setAuthenticated, setShowModal }) => {
   const dispatch = useDispatch()
+  const history = useHistory()
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,6 +17,8 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     const user = await dispatch(login(email, password));
     if (!user.errors) {
       setAuthenticated(true);
+      setShowModal(false);
+      history.push('/search')
     } else {
       setErrors(user.errors);
     }
@@ -27,10 +32,6 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     setPassword(e.target.value);
   };
 
-  if (authenticated) {
-    return <Redirect to="/" />;
-  }
-
   return (
     <form onSubmit={onLogin}>
       <div>
@@ -38,27 +39,32 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           <div>{error}</div>
         ))}
       </div>
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          name="email"
-          type="text"
-          placeholder="Email"
-          value={email}
-          onChange={updateEmail}
-        />
+      <div className='container'>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            name="email"
+            type="text"
+            placeholder="Email"
+            value={email}
+            onChange={updateEmail}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={updatePassword}
+          />
+        </div>
+        <div>
+          <button className='login' type="submit">Login</button>
+        </div>
       </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={updatePassword}
-        />
-        <button type="submit">Login</button>
-      </div>
+      
     </form>
   );
 };

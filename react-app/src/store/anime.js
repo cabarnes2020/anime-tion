@@ -26,7 +26,7 @@ const getOneAnime = (anime) => {
 }
 
 export const getAll = () => async (dispatch) => {
-    const res = await fetch('/api/anime')
+    const res = await fetch('/api/anime/')
 
     if(res.ok){
         const animeList = await res.json()
