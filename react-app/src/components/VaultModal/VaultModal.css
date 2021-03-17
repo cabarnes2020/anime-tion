@@ -1,27 +1,14 @@
-.modal-container{
-    display: flex;
-    justify-content: center;
-    width: 300px;
-    height: fit-content;
-    background-color: #424B54;
+.vault-button{
+background-color: rgba(66, 75, 84, 1);
+color: #F6F740;
+border: solid;
+border-color: gray;
+border-radius: 15px;
+width: 80px;
+height: 40px;
 }
 
-.name-input{
-    border-radius: 9999px;
-    border: solid;
-    border-width: 3px;
-    border-color: gray;
-    width: 200x;
-    height: 45px;
-    background-color: rgba(66, 75, 84, 1);
-    outline: none;
-    color: #F6F740;
-    text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-.name-input:focus{
+.vault-button:hover{
     transition: all .2s ease-in-out;
     transform: scale(1.05);
     border-color: rgb(246, 247, 64);

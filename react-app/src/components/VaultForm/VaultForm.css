@@ -1,15 +1,43 @@
-.vault-button{
-background-color: rgba(66, 75, 84, 1);
-color: #F6F740;
-border: solid;
-border-color: gray;
-border-radius: 15px;
-width: 80px;
-height: 40px;
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: fit-content;
+    background-color: #424B54;
+    border: solid, gray;
+    border-radius: 10px;
+    outline: none;
 }
 
-.vault-button:hover{
-    transition: all .2s ease-in-out;
-    transform: scale(1.05);
-    border-color: rgb(246, 247, 64);
+.modal-container input{
+    border: solid gray;
+    border-radius: 10px;
+    background-color: #424B54;
+    color: #F6F740;
+    width: 50%;
+    height: 40px;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    outline: none;
+}
+
+.modal-container input:hover {
+    border-color: #F6F740;
+}
+
+.vault{
+    background-color: rgba(66, 75, 84, 1);
+    color: #F6F740;
+    border: solid;
+    border-color: gray;
+    border-radius: 15px;
+    width: 80px;
+    height: 40px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.vault:hover{
+    border-color: #F6F740;
 }
