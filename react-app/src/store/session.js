@@ -1,6 +1,5 @@
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser'
-const MAKE_VAULT = 'session/makeVault'
 
 export const setUser = (user) => {
     return {
@@ -14,6 +13,7 @@ export const removeUser = () => {
         type: REMOVE_USER
     }
 }
+
 
 export const authenticate = () => async (dispatch) => {
     const response = await fetch('/api/auth/', {
@@ -97,6 +97,22 @@ export const createVault = (name) => async (dispatch) => {
     const res = await fetch('/api/vaults/new', {
         method: 'POST',
         body: form
+    })
+
+    if(res.ok){
+        const user = await res.json()
+        dispatch(setUser(user))
+    }
+}
+
+export const addToVault = (vaultId, animeId) => async (dispatch) => {
+
+    const res = await fetch('/api/vaults/addAnime', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ vaultId, animeId })
     })
 
     if(res.ok){

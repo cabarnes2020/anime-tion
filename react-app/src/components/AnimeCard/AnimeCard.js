@@ -6,8 +6,6 @@ import { getAll, getTrending } from "../../store/anime"
 import './AnimeCard.css'
 
 const AnimeCard = ({anime}) => {
-    const dispatch = useDispatch()
-    const animeList = useSelector(state => state.anime.animeList)
 
     // useEffect(() => {
     //     dispatch(getAll())

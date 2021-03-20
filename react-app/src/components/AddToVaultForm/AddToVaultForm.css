@@ -1,0 +1,24 @@
+.add-to-vault-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: fit-content;
+    background-color: #424B54;
+    border: solid, gray;
+    border-radius: 10px;
+    outline: none;
+}
+
+
+.add-to-vault{
+    background-color: rgba(66, 75, 84, 1);
+    color: #F6F740;
+    border: solid;
+    border-color: gray;
+    border-radius: 15px;
+    width: 80px;
+    height: 40px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
