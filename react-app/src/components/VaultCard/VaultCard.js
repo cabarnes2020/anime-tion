@@ -13,13 +13,16 @@ const VaultCard = ({vault}) => {
                 <div className='vault-name'>
                     <h2>{vault.name}</h2>
                 </div>
-                {
-                    vault.anime.map((anime) => {
-                        return(
-                            <AnimeCard anime={anime} />
-                        )
-                    })
-                }
+                <div className='anime'>
+                    {
+                        vault.anime.map((anime) => {
+                            return (
+                                <AnimeCard anime={anime} />
+                            )
+                        })
+                    }
+                </div>
+               
             </div>
             }
         </>

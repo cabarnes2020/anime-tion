@@ -1,13 +1,22 @@
 .vault-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border: solid;
     border-color: gray;
     border-radius: 10px;
-    background-color: ;
     overflow-x: scroll;
-    width: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
     height: fit-content;
+    margin-bottom: 2rem;
+}
+.anime{
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    height: fit-content;
+    padding-right: 1rem;
 }
 
 .vault-container:hover{
@@ -20,4 +29,5 @@
     display: flex;
     color: #FB8B24;
     text-align: center;
+    justify-content: center;
 }
