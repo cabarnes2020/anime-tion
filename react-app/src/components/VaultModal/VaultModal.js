@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/ModalContext';
 import VaultForm from '../VaultForm/VaultForm';
+import './VaultModal.css'
+
 
 function VaultFormModal() {
     const [showModal, setShowModal] = useState(false)

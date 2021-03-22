@@ -1,4 +1,4 @@
-.modal-container{
+.add-to-vault-container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,23 +10,8 @@
     outline: none;
 }
 
-.modal-container input{
-    border: solid gray;
-    border-radius: 10px;
-    background-color: #424B54;
-    color: #F6F740;
-    width: 50%;
-    height: 40px;
-    margin-top: 1rem;
-    padding-left: 1rem;
-    outline: none;
-}
 
-.modal-container input:hover {
-    border-color: #F6F740;
-}
-
-.vault{
+.add-to-vault{
     background-color: rgba(66, 75, 84, 1);
     color: #F6F740;
     border: solid;
@@ -36,8 +21,4 @@
     height: 40px;
     margin-top: 1rem;
     margin-bottom: 1rem;
-}
-
-.vault:hover{
-    border-color: #F6F740;
 }

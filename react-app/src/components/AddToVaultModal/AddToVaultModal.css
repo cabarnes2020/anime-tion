@@ -1,4 +1,4 @@
-.vault-button{
+.add-to-vault-button{
 background-color: rgba(66, 75, 84, 1);
 color: #F6F740;
 border: solid;
@@ -8,7 +8,7 @@ width: 80px;
 height: 40px;
 }
 
-.vault-button:hover{
+.add-to-vault-button:hover{
     transition: all .2s ease-in-out;
     transform: scale(1.05);
     border-color: rgb(246, 247, 64);

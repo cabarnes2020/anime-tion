@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom';
 import { getOne } from '../../store/anime'
 import ReactPlayer from 'react-player'
+import AddToVaultModal from '../AddToVaultModal/AddToVaultModal'
 import "./AnimePage.css"
 
 const AnimePage = () => {
@@ -30,6 +31,9 @@ const AnimePage = () => {
                 </div>
                 <div className='video-container'>
                     <ReactPlayer width='880px' height='690px' controls url={anime.trailer} />
+                </div>
+                <div>
+                    <AddToVaultModal />
                 </div>
                 <div className='anime-info'>
                     <div className='description'>

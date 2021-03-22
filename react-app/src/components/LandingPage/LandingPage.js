@@ -9,7 +9,7 @@ import {useSearchContext} from "../../context/SearchContext"
 
 const LandingPage = () => {
     const sessionUser = useSelector(state => state.session.user)
-    const animeList = useSelector(state => state.anime.animeList)
+    // const animeList = useSelector(state => state.anime.animeList)
     const { filterAnime } = useSearchContext()
     const dispatch = useDispatch()
     

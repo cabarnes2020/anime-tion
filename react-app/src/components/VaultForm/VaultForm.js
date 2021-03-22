@@ -27,7 +27,7 @@ const VaultForm = ({authenticated, setAuthenticated, setShowModal}) => {
                 ))}
             </div>
             <div className="modal-container">
-                <div className="name-input">
+                <div>
                     <label htmlFor="name">Name</label>
                     <input
                         name="name"
@@ -37,7 +37,7 @@ const VaultForm = ({authenticated, setAuthenticated, setShowModal}) => {
                         onChange={updateName}
                     />
                 </div>
-                <button type="submit">Create Vault</button>
+                <button className='vault' type="submit">Create Vault</button>
             </div>
         </form>
     )

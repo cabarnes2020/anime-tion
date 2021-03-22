@@ -1,6 +1,7 @@
 from .db import db
 from .user import User
 from datetime import datetime
+from .vaultanime import vault_anime
 
 
 class Vault(db.Model):
@@ -13,8 +14,7 @@ class Vault(db.Model):
     updated_at = db.Column(db.DateTime, nullable=False, default=datetime.now())
 
     user = db.relationship('User', back_populates='vaults')
-    
-    anime_list = db.relationship('Anime', back_populates='vault')
+    anime_list = db.relationship('Anime', secondary=vault_anime, back_populates='vault')
 
     def to_dict(self):
         return {
