@@ -31,9 +31,9 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
           }
           { authenticated &&
           <>
+            <ProfileButton />
             <VaultFormModal />
             <LogoutButton setAuthenticated={setAuthenticated}/>
-            <ProfileButton />
           </>
           }
         </div>
