@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 300px;
-    height: 200px;
+    height: 300px;
     background-color: #424B54;
     border: solid, gray;
     border-radius: 10px;
@@ -39,5 +39,20 @@
 }
 
 .login:hover{
+    border-color: #F6F740;
+}
+
+.demo-login{
+    background-color: rgba(66, 75, 84, 1);
+    color: #F6F740;
+    border: solid;
+    border-color: gray;
+    border-radius: 15px;
+    width: 80px;
+    height: 40px;
+    margin-top: 1rem;
+}
+
+.demo-login:hover{
     border-color: #F6F740;
 }

@@ -31,13 +31,16 @@ const UserProfile = () => {
                 <div className='vault-header'>
                     <h1>My Vaults</h1>
                 </div>
-                {
-                    sessionUser.vaults.map((vault) => {
-                        return(
-                            <VaultCard key={vault.name} vault={vault} />
-                        )
-                    })
-                }
+                <div className='vaults'>
+                    {
+                        sessionUser.vaults.map((vault) => {
+                            return (
+                                <VaultCard key={vault.name} vault={vault} />
+                            )
+                        })
+                    }
+                </div>
+                
             </div>
         </div>
     )

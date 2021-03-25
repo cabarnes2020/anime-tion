@@ -5,8 +5,10 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
 
-    demo = User(username='Demo', email='demo@aa.io',
-                password='password', fav_anime_id=1)
+    demo = User(username='Demo',
+                email='demo@aa.io',
+                password='password', profile_pic='https://anime-tion.s3.us-east-2.amazonaws.com/ichigo_vs_yammy.jpeg',
+                fav_anime_id=1)
 
     db.session.add(demo)
 

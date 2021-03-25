@@ -4,6 +4,8 @@ import LogoutButton from './auth/LogoutButton';
 import LoginFormModal from './auth/LoginFormModal'
 import SignupFormModal from './auth/SignupFormModal'
 import VaultFormModal from './VaultModal/VaultModal'
+import ProfileButton from './ProfileButton/ProfileButton'
+
 import './NavBar.css'
 
 const NavBar = ({ authenticated, setAuthenticated }) => {
@@ -17,7 +19,9 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
         </div>
         <div className='navbar-middle'>
           { authenticated &&
-            <h2>ANIMEtion</h2>
+            <div>
+              <h2>ANIMEtion</h2>
+            </div>
           }
         </div>
         <div className='navbar-right'>
@@ -29,6 +33,7 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
           }
           { authenticated &&
           <>
+            <ProfileButton />
             <VaultFormModal />
             <LogoutButton setAuthenticated={setAuthenticated}/>
           </>
