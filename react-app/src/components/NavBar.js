@@ -19,7 +19,9 @@ const NavBar = ({ authenticated, setAuthenticated }) => {
         </div>
         <div className='navbar-middle'>
           { authenticated &&
-            <h2>ANIMEtion</h2>
+            <div>
+              <h2>ANIMEtion</h2>
+            </div>
           }
         </div>
         <div className='navbar-right'>

@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
-    height: 50px
+    height: 60px
 }
 
 .navbar-left{
@@ -21,8 +20,8 @@
 
 .navbar-middle{
     display: flex;
-    justify-content: center;
-    margin-left: 6rem;
+    justify-content: flex-end;
+    margin-left: 12rem;
 }
 .navbar-middle h2{
     font-size:x-large;

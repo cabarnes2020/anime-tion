@@ -24,6 +24,18 @@ const LoginForm = ({ authenticated, setAuthenticated, setShowModal }) => {
     }
   };
 
+  const demoLogin = async (e) => {
+    e.preventDefault()
+    const user = await dispatch(login("demo@aa.io", "password"))
+    if (!user.errors) {
+      setAuthenticated(true);
+      setShowModal(false);
+      history.push('/search')
+    } else {
+      setErrors(user.errors);
+    }
+  }
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -59,6 +71,9 @@ const LoginForm = ({ authenticated, setAuthenticated, setShowModal }) => {
             value={password}
             onChange={updatePassword}
           />
+        </div>
+        <div>
+          <button className='demo-login' type="button" onClick={demoLogin}>Demo User</button>
         </div>
         <div>
           <button className='login' type="submit">Login</button>
