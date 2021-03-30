@@ -25,6 +25,18 @@ def new_vault():
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}
 
+@vault_routes.route('/<int:vault_id>/delete', methods=['DELETE'])
+@login_required
+def remove_vault(vault_id):
+    user = User.query.get(current_user.id)
+    vault = Vault.query.get(vault_id)
+
+    user.vaults.remove(vault)
+    db.session.delete(vault)
+    db.session.commit()
+
+    return user.to_dict()
+
 
 @vault_routes.route('/addAnime', methods=['PUT'])
 # @login_required
