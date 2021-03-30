@@ -105,6 +105,18 @@ export const createVault = (name) => async (dispatch) => {
     }
 }
 
+export const deleteVault = (vaultId) => async (dispatch) => {
+    const res = await fetch(`/api/vaults/${vaultId}/delete`, {
+        method: 'DELETE',
+        body: JSON.stringify({vaultId})
+    })
+    
+    if(res.ok){
+        const user = await res.json()
+        dispatch(setUser(user))
+    }
+}
+
 export const addToVault = (vaultId, animeId) => async (dispatch) => {
 
     const res = await fetch('/api/vaults/addAnime', {
@@ -120,7 +132,6 @@ export const addToVault = (vaultId, animeId) => async (dispatch) => {
         dispatch(setUser(user))
     }
 }
-
 
 
 const initialState = { user: null };
