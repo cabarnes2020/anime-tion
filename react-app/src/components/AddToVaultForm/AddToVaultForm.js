@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { addToVault } from '../../store/session'
 import './AddToVaultForm.css'
 
 
 const AddToVaultForm = ({ authenticated, setAuthenticated, setShowModal }) => {
     const dispatch = useDispatch()
+    const history = useHistory();
     const sessionUser = useSelector(state => state.session.user)
     const {animeId} = useParams()
     const [errors, setErrors] = useState([])
     const [idVault, setIdVault] = useState()
 
     console.log("VAULT", idVault)
+
     const onAddToVault = async (e) => {
         e.preventDefault()
         dispatch(addToVault(idVault ,animeId))
+        history.push(`/users/${sessionUser.id}`)
     }
 
     return (
